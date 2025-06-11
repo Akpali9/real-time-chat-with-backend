@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Chat App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Login Screen -->
+        <div id="login-screen" class="screen active">
+            <div class="login-form">
+                <h1> Chat App</h1>
+                <p>Enter your name to start chatting</p>
+                <input type="text" id="username-input" placeholder="Your name..." maxlength="20">
+                <button id="join-btn">Join Chat</button>
+            </div>
+        </div>
+
+        <!-- Chat Screen -->
+        <div id="chat-screen" class="screen">
+            <div class="chat-header">
+                <h2>💬 Chat Room</h2>
+                <div class="user-info">
+                    <span id="current-user"></span>
+                    <button id="leave-btn">Leave</button>
+                </div>
+            </div>
+
+            <div class="chat-container">
+                <div class="sidebar">
+                    <h3>Online Users (<span id="user-count">0</span>)</h3>
+                    <div id="users-list"></div>
+                </div>
+
+                <div class="chat-main">
+                    <div id="messages-container"></div>
+                    <div id="typing-indicator"></div>
+                    
+                    <div class="message-input-container">
+                        <input type="text" id="message-input" placeholder="Type your message..." maxlength="500">
+                        <button id="send-btn">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
