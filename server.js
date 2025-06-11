@@ -10,6 +10,7 @@ const io = socketIo(server);
 // Serve static files from public directory
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 // Store connected users
 const users = new Map();
 
@@ -27,7 +28,7 @@ io.on('connection', (socket) => {
     // Notify all users about new user
     socket.broadcast.emit('user joined', {
       username: username,
-      message: '${username} joined the chat',
+      message: `${username} joined the chat`,
       timestamp: new Date().toLocaleTimeString()
     });
     
@@ -75,7 +76,7 @@ io.on('connection', (socket) => {
       // Notify all users about user leaving
       socket.broadcast.emit('user left', {
         username: user.username,
-        message: '${user.username} left the chat',
+        message: `${user.username} left the chat`,
         timestamp: new Date().toLocaleTimeString()
       });
       
@@ -89,8 +90,9 @@ io.on('connection', (socket) => {
 });
 
 const PORT = process.env.PORT || 3000;
-server.listen(PORT, () => {
+const IP = '127.0.0.1';
+server.listen(PORT, IP, () => {
   console.log('Chat server running on port 3000');
-  console.log('Visit http://localhost:3000 to start chatting!');
+  console.log('Visit http://localhost:3000 to start chatting! or http://127.0.0.1:3000');
 });
 
