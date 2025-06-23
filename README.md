@@ -1,0 +1,1 @@
+Connect instantly! Our real-time chat app delivers live messages the moment they're sent. Chat one-on-one or in vibrant group conversations. Share files, see typing indicators, and enjoy seamless syncing across devices. Experience effortless, instant communication with anyone, anywhere – no refreshing needed.
