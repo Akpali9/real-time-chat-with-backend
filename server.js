@@ -2,7 +2,6 @@ const express = require('express');
 const http = require('http');
 const socketIo = require('socket.io');
 const path = require('path');
-
 const app = express();
 const server = http.createServer(app);
 const io = socketIo(server);
@@ -95,4 +94,5 @@ server.listen(PORT, IP, () => {
   console.log('Chat server running on port 3000');
   console.log('Visit http://localhost:3000 to start chatting! or http://127.0.0.1:3000');
 });
+
 
